@@ -17,10 +17,16 @@ jobs:
         path: Ackee
     - name: File commit
       run: |
-          mkdir temp
           rm -rf Update/.git/*
-          mv -b Update/* temp/ 
-          mv -b temp/* Ackee/          		
+         
+          mkdir temp
+          mkdir temp/.git/
+
+          mv Ackee/.git/* temp/.git/
+          rm -rf Ackee/*
+                   
+          mv Update/* temp/ 
+          mv temp/* Ackee/          		
     - name: Commit files
       run: |
         cd Ackee
