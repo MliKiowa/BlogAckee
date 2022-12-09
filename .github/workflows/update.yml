@@ -15,11 +15,7 @@ jobs:
           cd Ackee
           git config --global user.email nineto0@qq.com
           git config --global user.name Mlikiowa
-          git remote set-url origin https://github.com/MliKiowa/BlogAckee
+          git remote set-url origin https://oauth:${{ secrets.GITHUB_TOKEN }}@github.com/MliKiowa/BlogAckee
           git add .
           git commit -m "Update Ackee" -a
           git push -f origin master		
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
