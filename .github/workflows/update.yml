@@ -23,7 +23,7 @@ jobs:
           mkdir temp/.git/
 
           mv Ackee/.git/* temp/.git/
-          rm -rf Ackee/.git/*
+          rm -rf Ackee/.git
           rm -rf Ackee/*
 
           mkdir Ackee/.git/
