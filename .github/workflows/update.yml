@@ -9,13 +9,23 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: electerious/Ackee
+        path: Update
+    - name: Checkout My repo
+      uses: actions/checkout@v3
+      with:
+        repository: Mlikikwa/BlogAckee
         path: Ackee
     - name: File commit
       run: |
+          mkdir temp
+          mv Update/* temp/
+          mv temp/* Ackee/
           cd Ackee
           git config --global user.email nineto0@qq.com
           git config --global user.name Mlikiowa
-          git remote set-url origin https://oauth:${{ secrets.GITHUB_TOKEN }}@github.com/MliKiowa/BlogAckee
-          git add .
-          git commit -m "Update Ackee" -a
-          git push -f origin master		
+          git add *
+          git commit -m "Update Ackee" -a		
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
