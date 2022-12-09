@@ -1,0 +1,23 @@
+name: Update
+on:
+  workflow_dispatch:
+jobs:
+  UpdateAckee:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Ackee repo
+      uses: actions/checkout@v3
+      with:
+        repository: electerious/Ackee
+        path: Ackee
+    - name: File commit
+      run: |
+          git config --global user.email nineto0@qq.com
+          git config --global user.name Mlikiowa
+          git remote set-url origin https://github.com/MliKiowa/BlogAckee
+          git add .
+          git commit -m "Update Ackee" -a		
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
