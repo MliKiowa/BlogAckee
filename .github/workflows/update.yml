@@ -17,7 +17,8 @@ jobs:
           git config --global user.name Mlikiowa
           git remote set-url origin https://github.com/MliKiowa/BlogAckee
           git add .
-          git commit -m "Update Ackee" -a		
+          git commit -m "Update Ackee" -a
+          git push -f origin master		
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
