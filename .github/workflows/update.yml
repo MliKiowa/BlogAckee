@@ -24,7 +24,10 @@ jobs:
 
           mv Ackee/.git/* temp/.git/
           rm -rf Ackee/*
-                   
+
+          mkdir Ackee/.git/
+          mv temp/.git/* Ackee/.git/
+
           mv Update/* temp/ 
           mv temp/* Ackee/          		
     - name: Commit files
