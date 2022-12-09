@@ -12,6 +12,7 @@ jobs:
         path: Ackee
     - name: File commit
       run: |
+          cd Ackee
           git config --global user.email nineto0@qq.com
           git config --global user.name Mlikiowa
           git remote set-url origin https://github.com/MliKiowa/BlogAckee
