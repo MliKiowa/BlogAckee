@@ -13,7 +13,7 @@ jobs:
     - name: Checkout My repo
       uses: actions/checkout@v3
       with:
-        repository: Mlikiokwa/BlogAckee
+        repository: Mlikiowa/BlogAckee
         path: Ackee
     - name: File commit
       run: |
