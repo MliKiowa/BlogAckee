@@ -18,8 +18,8 @@ jobs:
     - name: File commit
       run: |
           mkdir temp
-          mv Update/* temp/ – b
-          mv temp/* Ackee/ – b
+          mv -b Update/* temp/ 
+          mv -b temp/* Ackee/
           cd Ackee
           git config --global user.email nineto0@qq.com
           git config --global user.name Mlikiowa
