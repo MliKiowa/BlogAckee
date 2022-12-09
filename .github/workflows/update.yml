@@ -18,6 +18,7 @@ jobs:
     - name: File commit
       run: |
           mkdir temp
+          rm -rf Update/.git/*
           mv -b Update/* temp/ 
           mv -b temp/* Ackee/
           cd Ackee
